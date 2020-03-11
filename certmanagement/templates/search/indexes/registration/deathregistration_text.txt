@@ -1,0 +1,4 @@
+{{ object.person.first_name }}
+{{ object.person.middle_name}}
+{{ object.person.surname }}
+{{ object.date_of_death }}

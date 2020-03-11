@@ -1,0 +1,52 @@
+{% extends 'census/base.html' %}
+{% load static %}
+{% block title %}Population Enumeration System Certificate Management{% endblock %}
+{% block stylesheet %}
+    <link href="{% static 'information/css/main.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="container" id="thecontainer">
+        <div class="main-container">
+            <div id="div1">
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3" id="about">
+                        <span></span>
+
+                        <div>
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper">
+
+                                    <a href="{% url "certmanagement:birth_search" %}">Birth Certificate Management</a>
+                                    </span>
+                            </h2>
+                            <p class="mb-0">
+                                Click Birth Certificate management to be enabled to search for a birth certificate in our system.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-lg-offset-3" id="howpredict">
+                         <span></span>
+
+                        <div>
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper">
+                                        <a href="{% url "certmanagement:death_search" %}">Death Certificate Management</a>
+                                </span>
+                            </h2>
+                            <p class="mb-0">
+                                Click Death Certificate management to be enabled to search for a Death certificate in our system.
+                            </p>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loadjs">
+
+    </div>
+{% endblock %}
+{% block javascript %}
+{% endblock %}

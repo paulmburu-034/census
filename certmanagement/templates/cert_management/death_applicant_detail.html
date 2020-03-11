@@ -1,0 +1,27 @@
+{% extends 'census/base.html' %}
+{% block content %}
+    <div class="row">
+    <div class="col-sm-3">
+        <span></span>
+    </div>
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="wrapper">
+                <h2>Population Enumeration System</h2>
+                <p>Death Certificate Results.</p>
+            </div>
+            <p class="mb-0">
+                First Name: {{ applicant.person.first_name }}
+            </p>
+            <p class="mb-0">
+                Middle Name: {{ applicant.person.middle_name  }}
+            </p>
+            <p class="mb-0">
+                Surname: {{ applicant.person.surname }}
+            </p>
+            <p class="mb-0">
+                Death Certificate Number: {{ applicant.death_cert_no }}
+            </p>
+            <p><a href="{% url 'certmanagement:print_death_certificate' applicant.id %}">Print Death Certificate</a></p>
+        </div>
+    </div>
+{% endblock %}

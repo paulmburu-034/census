@@ -1,0 +1,44 @@
+{% extends 'census/base.html' %}
+{% block title %}Search{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3" id="about">
+
+        <span></span>
+
+        <div>
+            <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Birth Certificate Management</span><br>
+                <span class="section-heading-lower">Birth Search</span>
+            </h2>
+            {% if query %}
+            <h2>Results containing "{{ query }}"</h2>
+            <h3>
+                {% with results.count as total_results %}
+                Found {{ total_results }} result{{ total_results|pluralize }}
+                {% endwith %}
+            </h3>
+            {% for birth in results %}
+            <h5><a href="{{ birth.get_absolute_url }}">{{ birth.first_name }} {{ birth.middle_name }}</a></h5>
+            <p>{{ birth.birth_cert_no }}</p>
+            {% empty %}
+            <p>There are no results for your query.</p>
+            {% endfor %}
+            <p><a href="{% url "certmanagement:birth_search" %}">Search again</a></p>
+            {% else %}
+            <h1>Search for birth applicant</h1>
+            <form action="." method="get">
+                {{ form.as_p }}
+                <input type="submit" value="Search">
+            </form>
+            {% endif %}
+            <p class="mb-0">
+
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

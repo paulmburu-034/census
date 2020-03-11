@@ -1,0 +1,97 @@
+{% extends "census/base.html" %}
+{% load static %}
+{% block title %}Population Enumeration System Analysis page{% endblock %}
+{% block stylesheet %}
+    <link href="{% static 'analysis/css/analysis.css' %}" rel="stylesheet">
+{% endblock %}
+{% block head %}
+<script src="{% static 'analysis/js/jquery.js' %}"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart']});
+</script>
+<script>
+    google.charts.load('current', {packages: ['table']});
+
+</script>
+<script src="{% static 'analysis/js/analysis.js' %}"></script>
+<script src="{% static 'analysis/js/death_analysis.js' %}"></script>
+<script src="{% static 'analysis/js/death_census.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="wrapper">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <h1 class="my-4">Population Analysis</h1>
+                <div class="list-group">
+                    <div id="analysis_selection">
+                        <ul>
+                            <li class="center">
+                                <div>
+                                    <div class="bg-primary">
+                                        <a href="javascript:Census_analysis()">
+                                            Birth Analysis
+                                        </a>
+                                    </div>
+                                </div>
+                            </li></ul>
+                    </div>
+                    <div>
+                        <ul>
+
+                            <li class="center">
+                                <div>
+                                    <div class="bg-primary">
+                                        <a href="javascript:Death_Census_analysis()">
+                                            Death Analysis
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-9" id="analysis">
+
+                    <div class="census_analysis" class="col-lg-9">
+                         <div id="theguide">
+                             <h1>Population Enumeration Analysis</h1>
+                             <p>
+                                 Click Birth analysis to view current population analysis and Death Analysis to view current death population analysis
+                             </p>
+                         </div>
+                        <div id="output">
+
+                        </div>
+                        <div id="pop_per_counties">
+
+                        </div>
+                        <div id="pie">
+                        </div>
+                        <div id="male_female">
+
+                        </div>
+                        <div id="counties">
+
+                        </div>
+
+            </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+<script src="{% static 'analysis/js/jquery.js' %}"></script>
+<script src="{% static 'analysis/js/death_analysis.js' %}"></script>
+<script src="{% static 'analysis/js/death_census.js' %}"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart']});
+</script>
+<script>google.charts.setOnLoadCallback(drawChart);</script>
+
+<script src="{% static 'analysis/js/analysis.js' %}"></script>
+{% endblock %}

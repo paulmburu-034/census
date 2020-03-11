@@ -1,0 +1,196 @@
+{% extends "census/base.html" %}
+{% load static %}
+{% block title %}Population Enumeration System homepage{% endblock %}
+{% block stylesheet %}
+    <link href="{% static 'information/css/main.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="container" id="thecontainer">
+        <script type="text/javascript">
+            function myFunction() {
+               var dots = document.getElementById("dots");
+               var moreText = document.getElementById("more");
+               var btnText = document.getElementById("myBtn");
+
+               if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more";
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less";
+                    moreText.style.display = "inline";
+                }
+                }
+            function my_2Function() {
+               var dots = document.getElementById("dots");
+               var moreText = document.getElementById("more");
+               var btnText = document.getElementById("Btn");
+
+               if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more";
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less";
+                    moreText.style.display = "inline";
+                }
+                }
+            function my_Function() {
+               var dots = document.getElementById("dots");
+               var moreText = document.getElementById("inmore");
+               var btnText = document.getElementById("my_Btn");
+
+               if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more";
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less";
+                    moreText.style.display = "inline";
+                }
+                }
+            function my_1Function() {
+               var dots = document.getElementById("dots");
+               var moreText = document.getElementById("mymore");
+               var btnText = document.getElementById("my_1Btn");
+
+               if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more";
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less";
+                    moreText.style.display = "inline";
+                }
+                }
+        </script>
+        <div class="main-container">
+            <div id="div1">
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3" id="about">
+                        <span></span>
+
+                        <div>
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper"><b>Population Analysis</b></span>
+                            </h2>
+                            <p class="mb-0">
+                                Analysis of the population data added in the system is done on a live interface.
+                                Due to this factor the information we provide on request will be accurate as of
+                                the day and time the analysis<span id="dots">...</span><span id="more" style="display: none;"> was done by the system. This is due to the fact that
+                                the population  details are added on the system on a real time basis.
+                                <b>Need of analysed population statistics</b>Upon request via the provided means
+                                on the contact information the data will be sent to you in the format the system
+                                did the analysis with. We are also open to any queries and clarifications on the analysis
+                                of the information provided.
+                                Immediately you receive a copy of the analysis the security of it is your own
+                                responsibility.</span>
+                            </p>
+                            <button class="bg-primary" onclick="my_2Function()" id="Btn">Read more</button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-lg-offset-3" id="howpredict">
+                         <span></span>
+
+                        <div>
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper"><b>How the System</b></span>
+                                <span class="section-heading-lower"><b>Will work</b></span>
+                            </h2>
+                            <p class="mb-0">
+                              The system needs requires entry of data about an individual citizen,
+                                from birth to death. Relevant certificates are awarded to the applicant
+                                on request.<span id="dots">...</span><span id="more" style="display: none;"> This certificates are awarded in the office on the registrar
+                                of births and death in any part of the country. Any other office cannot
+                                produce this certificates.
+                                When you provide your information to us the system has been safeguarded thus
+                                your information security is guaranteed by our system.<br>
+                                <b> Future Expectation</b>
+                                Our system will be able to produce identity card and other government required
+                                documents immediately a citizen turns 18 years old. This will thus prevent time
+                                loss and data redundancy in our systems during applications. Efficiency and being
+                                effective is our goal.</span>
+                            </p>
+                            <button class="bg-primary" onclick="myFunction()" id="myBtn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span></span>
+            <hr />
+            <div id="div2">
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3" id="soilsample">
+                         <span></span>
+
+                        <div>
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper"><b>Contact information</b></span>
+                            </h2>
+                            <p class="mb-0">
+                                <b>Physical Address :</b> Microtech House<br>
+                                <b>Street Name: </b> Kitavo Lane<br>
+                                <b>Postal Address: </b>Population Enumeration System<span id="dots">...</span><span id="inmore" style="display: none;"> , P.O. Box 30100–20117 GPO NAIVASHA.<br>
+                                <b>Telephone:</b> +254-20-3317573 /3317412 /3317723 /3317022 /3317598 /3317286 /3327651<br>
+                                <b>Hotline Numbers: </b>0701324813, 0780046125<br>
+                                <b>Fax:</b> +254-20-315987<br>
+                                <b>Director General Office</b><br>
+                                info@pes.or.ke, directorgeneral@pes.or.ke<br>
+                                <b>Data request</b><br>
+                                datarequest@pes.or.ke<br>
+                                <b>To Report Corruption</b><br>
+                                integrity@pes.or.ke</span>
+                            </p>
+                            <button class="bg-primary" onclick="my_Function()" id="my_Btn">Read more</button>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-lg-offset-3" id="customersupport">
+                         <span></span>
+
+                        <div>
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper"><b>Core values</b></span>
+                            </h2>
+                            <p class="mb-0">
+                            <h5>Vision Statement:</h5>
+                            To be a centre of excellence in production and management of quality statistics</h5>
+                            <span id="dots">...</span><span id="mymore" style="display: none;">
+                            <h5>Mission Statement
+                            To develop, provide and promote quality statistical information for evidence-based decision making.
+                            <h5>Core Values</h5>
+                            <b>Professionalism:</b>
+                            Strictly abides by professional considerations on the methods, standards and procedures for statistical production.
+                            <b>Confidentiality:</b>
+                            Guarantee confidentiality of data providers as provided in the Statistics Act 2006<br>
+                            <b>Collaboration:</b>
+                            Collaborate with stakeholders so as to enhance the quality of statistical information<br>
+                            <b>Teamwork:</b>
+                            To embrace teamwork as the hallmark of our success<br>
+                            <b>Customer focus:</b>
+                            Commitment to meet the needs of our customers and always focus on customer satisfaction.<br>
+                            <b>Accountability and Transparency:</b>
+                            Conduct business and lend services to stakeholders in a transparent and accountable manner.<br>
+                            <b>Efﬁciency and effectiveness:</b>
+                            Promote high productivity, competence and usefulness of resources at the national and county level.<br>
+                            <b>Innovation and Creativity:</b>
+                            Committed to innovation, invention, creativity and resourcefulness in service delivery.</span>
+                            </p>
+                            <button class="bg-primary" onclick="my_1Function()" id="my_1Btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loadjs">
+
+    </div>
+{% endblock %}
+{% block javascript %}
+{% endblock %}

@@ -1,0 +1,5 @@
+{{ object.first_name }}
+{{ object.middle_name}}
+{{ object.surname }}
+{{ object.date_of_birth }}
+{{ object.reference_number }}

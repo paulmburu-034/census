@@ -1,0 +1,63 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>
+        {% block title %}Population Enumeration System{% endblock %}
+    </title>
+    <link href="{% static 'registration/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'registration/css/census.css' %}" rel="stylesheet">
+    {% block stylesheet %}
+{% endblock %}
+</head>
+{% block head %}
+{% endblock %}
+<body>
+<div id="maindiv" class="justify-content-lg-around">
+    <div class="container-fluid">
+        <h1>
+            Population Enumeration System
+        </h1>
+    </div>
+    <nav id="nav2" class="navbar">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+             <li>
+                 <a href="{% url 'registration:home' %}">Home</a>
+             </li>
+            {% if request.user.is_staff and request.user.is_active %}
+            <li>
+                <a href="{% url 'registration:birth_registration' %}">Birth Registration</a>
+            </li>
+            {% endif %}
+            <li>
+                <a href="{% url 'registration:birth_search' %}">Death Registration</a>
+            </li>
+            {% if request.user.is_superuser and request.user.is_staff and request.user.is_active %}
+            <li>
+                <a href="{% url 'registration:certificate_management' %}">Certificates Management</a>
+            </li>
+            <li>
+                <a href="{% url 'analysis:analysis' %}">Analysis</a>
+            </li>
+            {% endif %}
+        </ul>
+        <span></span>
+        {% include 'census/includes/header.html' %}
+    </nav>
+</div>
+{% block content %}
+
+{% endblock %}
+{% block javascript %}
+
+{% endblock %}
+<div class="footer text-faded text-center py-lg-5 jumbotron" id="foot2">
+    <div class="container" id="nav2">
+      <p class="m-0 small">Copyright &copy; Population Enumeration System 2019</p>
+    </div>
+  </div>
+</body>
+</html>

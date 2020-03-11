@@ -1,0 +1,41 @@
+{% extends "census/base.html" %}
+{% block title %}Edit your account{% endblock %}
+{% block content %}
+        <div class="container">
+
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-offset-2">
+
+        <div class="card mt-4">
+          <div class="card-body">
+
+          <div class="table-responsive-lg">
+    <h1>Edit your account</h1>
+    <p>You can edit your account using the following form:</p>
+    <form action="." method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+        <span>
+            <div>Profile Information:</div>
+            {{ user_form.as_p }}</span>
+        </div>
+        <div class="col-lg-6">
+        <span>
+            <div>Company Information:</div>
+            {{ company_form.as_p }}
+        </span>
+        </div>
+        {% csrf_token %}
+        <div class="col-lg-4">
+        <span><p><input type="submit" value="Save changes"></p></span>
+        </div>
+    </div>
+    </form>
+          </div>
+          </div>
+        </div>
+      </div>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Population Enumeration System Death Certificate</title>
+    <link href="{% static 'registration/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'cert_management/css/certificate.css' %}" rel="stylesheet">
+    <link href="{% static 'cert_management/css/stylish-portfolio.css' %}" rel="stylesheet">
+    <link href="{% static 'cert_management/css/stylish-portfolio.min.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
+<body id="page-top">
+<!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h3 class="mb-5" style="text-align: center;">REPUBLIC OF KENYA
+      </h3>
+    </div>
+    <div class="overlay"></div>
+
+  </header>
+<!-- Callout -->
+  <section class="callout">
+    <div class="container text-center">
+      <h2 class="mx-auto mb-5 text-center" STYLE="text-align: center;"><b>CERTIFICATE OF DEATH</b></h2>
+
+    </div>
+      <div>
+          <table style="width:100%; border-style: solid; border-collapse: collapse;">
+              <tr>
+                  <td colspan="8" style="width: 100%; border: 1px solid black;">
+                      Death in the <u style="color: red;">{{ applicant.person.constituency|capfirst }}</u> Constituency in the <u style="color: red;">{{ applicant.person.county|capfirst }}</u> County
+                  </td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid black;">Entry No:</td><td style="border: 1px solid black;">{{ applicant.death_cert_no }}</td>
+                  <td colspan="2" style="border: 1px solid black;">Name and Surname of Deceased:</td><td colspan="3">{{ applicant.person.first_name|capfirst }} {{ applicant.person.middle_name|capfirst }} {{ applicant.person.surname|capfirst }}</td>
+              </tr>
+              <tr style="border: 1px solid black;">
+                  <td style="border: 1px solid black;">Gender:</td><td style="border: 1px solid black;">{{ applicant.person.gender|capfirst }}</td>
+                  <td style="border: 1px solid black;">Age:</td><td style="border: 1px solid black;">{{ age }} </td>
+                  <td style="border: 1px solid black;">Occupation:</td><td>{{ applicant.occupation }}</td>
+              </tr>
+              <tr style="border: 1px solid black;">
+                  <td style="border: 1px solid black;">Date of Death:</td><td style="border: 1px solid black;"> {{ death_date }}</td>
+                  <td colspan="1.5" style="border: 1px solid black;">Place of Death:</td><td>{{ applicant.current_county|capfirst }}</td>
+                  <td colspan="1.5" style="border: 1px solid black;">Residence:</td><td colspan="2">{{ applicant.current_constituency|capfirst }}</td>
+              </tr>
+              <tr style="border: 1px solid black;">
+                  <td colspan="1.5" style="border: 1px solid black;">Cause of Death:</td><td> {{ applicant.cause_of_death }}</td>
+              </tr>
+              <tr style="border: 1px solid black;">
+                  <td colspan="1.5" style="border: 1px solid black;">Name and Description of Informant:</td><td> Sgd.MO</td>
+
+                  <td style="border: 1px solid black;">Name of Registering Officer</td><td>{{ applicant.death_author.first_name|capfirst }} {{ applicant.death_author.last_name|capfirst }}</td>
+                  <td style="border: 1px solid black;">Date of Registration</td><td colspan="2">{{ add_date }}</td>
+              </tr>
+              <tr style="border: 1px solid black;">
+                  <td colspan="8" style="width: 100%">I <u>{{ current_user.first_name|capfirst }} {{ current_user.last_name|capfirst }}</u> Constituency/ Assistant Registrar for {{ applicant.current_constituency }}
+                  Sub County, hereby certify that this certificate is compiled from an entry/return in the country's
+                  register of Deaths.</td>
+              </tr>
+          </table>
+          <p style="margin-inline-end: 20px; writing-mode: horizontal-tb; direction: rtl;">--------------------------------------------------</p>
+          <p style="margin-inline-end: 20px; writing-mode: horizontal-tb; direction: rtl;">Constituency/ Assistant Registrar</p>
+          <p>Given under the seal of the Principal Civil Registrar on the {{ update_date }}</p><hr>
+          <p>This certificate is issued in pursuance of the Births and Deaths Registration Act (Cap. 149) which
+          provides that a certified copy of any entry in any register or return purporting to be sealed or stamped
+          with the seal of the Principal Registrar shall be received as evidence of the dates and facts therein contained
+          without any or other proof of such entry.</p>
+      </div>
+  </section>
+
+</body>
+</html>
